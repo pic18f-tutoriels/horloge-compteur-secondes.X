@@ -133,13 +133,9 @@ unsigned char tics=0;
 
 /**
  * Routine des interruptions.
- * Détecte de quelle interruption il s'agit, puis appelle la fonction
- * correspondante.
  */
-void interrupt interruptions()
-{
-    if (INTCONbits.TMR0IF)
-    {
+void interrupt interruptions() {
+    if (INTCONbits.TMR0IF) {
         // Baisse le drapeau d'interruption pour la prochaine fois.
         INTCONbits.TMR0IF = 0;
 
